@@ -36,8 +36,7 @@ public final class HolidayManager {
           Christmas.INSTANCE,
           NewYear.INSTANCE,
           May4.INSTANCE,
-          AprilFools.INSTANCE,
-          Pride.INSTANCE
+          AprilFools.INSTANCE
     );
     private static final Map<Holder<SoundEvent>, Supplier<SoundEvent>> filterableSounds = new HashMap<>();
 

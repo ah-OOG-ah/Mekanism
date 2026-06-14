@@ -13,7 +13,6 @@ import mekanism.api.robit.RobitSkin;
 import mekanism.common.Mekanism;
 import mekanism.common.config.MekanismConfig;
 import mekanism.common.config.WorldConfig.OreVeinConfig;
-import mekanism.common.entity.RobitPrideSkinData;
 import mekanism.common.registration.impl.MekanismDamageType;
 import mekanism.common.resource.ore.OreBlockType;
 import mekanism.common.resource.ore.OreType;
@@ -35,7 +34,6 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.biome.Biome;
@@ -157,10 +155,6 @@ public class MekanismDatapackRegistryProvider extends BaseDatapackRegistryProvid
                     Mekanism.rl("item/robit_allay"),
                     ResourceLocation.withDefaultNamespace("husbandry/allay_deliver_item_to_player")
               ));
-              for (Map.Entry<RobitPrideSkinData, ResourceKey<RobitSkin>> entry : MekanismRobitSkins.PRIDE_SKINS.entrySet()) {
-                  ResourceKey<RobitSkin> key = entry.getValue();
-                  context.register(key, makeRobitSkin(key.location(), entry.getKey().getColor().length));
-              }
           });
 
     private static RobitSkin makeRobitSkin(ResourceLocation name, int variants) {

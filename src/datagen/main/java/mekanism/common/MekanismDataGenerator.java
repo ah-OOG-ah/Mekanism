@@ -24,7 +24,6 @@ import mekanism.client.model.MekanismItemModelProvider;
 import mekanism.client.sound.MekanismSoundProvider;
 import mekanism.client.state.MekanismBlockStateProvider;
 import mekanism.client.texture.MekanismSpriteSourceProvider;
-import mekanism.client.texture.PrideRobitTextureProvider;
 import mekanism.common.advancements.MekanismAdvancementProvider;
 import mekanism.common.integration.computer.ComputerHelpProvider;
 import mekanism.common.lib.FieldReflectionHelper;
@@ -88,7 +87,6 @@ public class MekanismDataGenerator {
         gen.addProvider(true, new BasePackMetadataGenerator(output, MekanismLang.PACK_DESCRIPTION));
         //Client side data generators
         gen.addProvider(event.includeClient(), new MekanismLangProvider(output));
-        gen.addProvider(event.includeClient(), new PrideRobitTextureProvider(output, existingFileHelper));
         gen.addProvider(event.includeClient(), new MekanismSoundProvider(output, existingFileHelper));
         gen.addProvider(event.includeClient(), new MekanismSpriteSourceProvider(output, existingFileHelper, lookupProvider));
         gen.addProvider(event.includeClient(), new MekanismItemModelProvider(output, existingFileHelper));

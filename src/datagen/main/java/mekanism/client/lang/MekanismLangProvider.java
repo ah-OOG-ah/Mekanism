@@ -35,7 +35,6 @@ import mekanism.common.content.gear.mekatool.ModuleFarmingUnit;
 import mekanism.common.content.gear.mekatool.ModuleTeleportationUnit;
 import mekanism.common.content.gear.mekatool.ModuleVeinMiningUnit;
 import mekanism.common.content.gear.shared.ModuleColorModulationUnit;
-import mekanism.common.entity.RobitPrideSkinData;
 import mekanism.common.integration.lookingat.LookingAtUtils;
 import mekanism.common.integration.lookingat.jade.JadeConstants;
 import mekanism.common.inventory.container.SelectedWindowData.WindowType;
@@ -656,14 +655,6 @@ public class MekanismLangProvider extends BaseLanguageProvider {
     private void addRobitSkins() {
         addRobitSkin(MekanismRobitSkins.BASE, "Default");
         addRobitSkin(MekanismRobitSkins.ALLAY, "Allay Costume");
-        for (Map.Entry<RobitPrideSkinData, ResourceKey<RobitSkin>> entry : MekanismRobitSkins.PRIDE_SKINS.entrySet()) {
-            ResourceKey<RobitSkin> prideSkin = entry.getValue();
-            String name = TextUtils.formatAndCapitalize(prideSkin.location().getPath());
-            if (entry.getKey() != RobitPrideSkinData.PRIDE) {
-                name += " Pride";
-            }
-            addRobitSkin(prideSkin, name);
-        }
     }
 
     private void addRobitSkin(ResourceKey<RobitSkin> name, String value) {
@@ -1006,9 +997,6 @@ public class MekanismLangProvider extends BaseLanguageProvider {
         add(MekanismLang.NEW_YEAR_LINE_TWO, "Best wishes to you as we enter this");
         add(MekanismLang.NEW_YEAR_LINE_THREE, "new and exciting year of %1$s! :)");
         add(MekanismLang.MAY_4_LINE_ONE, "May the 4th be with you, %1$s!");
-        add(MekanismLang.PRIDE_LINE_ONE, "Happy Pride Month, %1$s!");
-        add(MekanismLang.PRIDE_LINE_TWO, "Regardless of what anyone tells you,");
-        add(MekanismLang.PRIDE_LINE_THREE, "you are important!");
         //Generic
         //Note: How translation text component is implemented requires a double percent sign to make it show up as a single percent sign
         add(MekanismLang.GENERIC_PERCENT, "%1$s%%");

@@ -17,7 +17,6 @@ import mekanism.common.advancements.triggers.UseGaugeDropperTrigger;
 import mekanism.common.advancements.triggers.UseTierInstallerTrigger;
 import mekanism.common.advancements.triggers.ViewVibrationsTrigger;
 import mekanism.common.content.blocktype.FactoryType;
-import mekanism.common.entity.RobitPrideSkinData;
 import mekanism.common.item.block.machine.ItemBlockFactory;
 import mekanism.common.item.predicate.FullCanteenItemPredicate;
 import mekanism.common.item.predicate.MaxedModuleContainerItemPredicate;
@@ -296,7 +295,7 @@ public class MekanismAdvancementProvider extends BaseAdvancementProvider {
               .addCriterion("summon", SummonedEntityTrigger.TriggerInstance.summonedEntity(EntityPredicate.Builder.entity().of(MekanismEntityTypes.ROBIT.value())))
               .save(consumer);
         ItemStack skinnedRobit = MekanismItems.ROBIT.asStack();
-        skinnedRobit.set(MekanismDataComponents.ROBIT_SKIN, MekanismRobitSkins.PRIDE_SKINS.get(RobitPrideSkinData.TRANS));
+        skinnedRobit.set(MekanismDataComponents.ROBIT_SKIN, MekanismRobitSkins.ALLAY);
         advancement(MekanismAdvancements.ROBIT_AESTHETICS)
               .display(skinnedRobit, null, AdvancementType.TASK, true, false, true)
               .addCriterion("change_skin", ChangeRobitSkinTrigger.TriggerInstance.toAny())

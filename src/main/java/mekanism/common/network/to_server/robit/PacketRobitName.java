@@ -6,13 +6,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Stream;
 import mekanism.api.robit.RobitSkin;
 import mekanism.api.security.IEntitySecurityUtils;
 import mekanism.api.text.TextComponentUtil;
 import mekanism.common.Mekanism;
 import mekanism.common.entity.EntityRobit;
-import mekanism.common.entity.RobitPrideSkinData;
 import mekanism.common.network.IMekanismPacket;
 import mekanism.common.registries.MekanismRobitSkins;
 import net.minecraft.Util;
@@ -36,12 +34,7 @@ public record PacketRobitName(int entityId, String name) implements IMekanismPac
     );
 
     private static final Map<String, List<ResourceKey<RobitSkin>>> EASTER_EGGS = Map.of(
-          "sara", getPrideSkins(RobitPrideSkinData.TRANS, RobitPrideSkinData.LESBIAN)
     );
-
-    private static List<ResourceKey<RobitSkin>> getPrideSkins(RobitPrideSkinData... prideSkinData) {
-        return Stream.of(prideSkinData).map(MekanismRobitSkins.PRIDE_SKINS::get).toList();
-    }
 
     public PacketRobitName(EntityRobit robit, String name) {
         this(robit.getId(), name);
